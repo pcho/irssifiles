@@ -1,27 +1,11 @@
 servers = (
   {
-    address = "chat.freenode.net";
-    chatnet = "freenode";
+    address = "irc.tldr.chat";
+    chatnet = "tldr";
     port = "6697";
     use_tls = "yes";
-    tls_cert = "~/.irssi/certs/freenode.pem";
+    tls_cert = "~/.irssi/certs/mnx.pem";
     tls_verify = "yes";
-    autoconnect = "no";
-  },
-  {
-    address = "efnet.deic.eu";
-    chatnet = "efnet";
-    port = "6667";
-    family = "inet6";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.atw-inter.net";
-    chatnet = "ircnet";
-    port = "6667";
-    family = "inet6";
-    autoconnect = "no";
-    password = "";
   },
   {
     address = "irc.oftc.net";
@@ -30,31 +14,13 @@ servers = (
     use_tls = "yes";
     tls_cert = "~/.irssi/certs/oftc.pem";
     tls_verify = "yes";
-    autoconnect = "no";
   },
   {
-    address = "ipv6.dal.net";
-    chatnet = "dal";
-    port = "6697";
-    family = "inet6";
-    use_tls = "yes";
-    tls_verify = "yes";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.ipv6.quakenet.org";
-    chatnet = "qnet";
-    port = "6667";
-    family = "inet6";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.2600.net";
+    address = "corsair.scuttled.net";
     chatnet = "2600";
     use_tls = "yes";
     port = "6697";
     tls_cert = "~/.irssi/certs/2600.pem";
-    autoconnect = "no";
   },
   {
     address = "irc.hackint.org";
@@ -63,167 +29,35 @@ servers = (
     port = "6697";
     tls_cert = "~/.irssi/certs/hack.pem";
     tls_verify = "yes";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.rizon.net";
-    chatnet = "rizon";
-    use_tls = "yes";
-    port = "6697";
-    tls_verify = "yes";
-    tls_cert = "~/.irssi/certs/Rizon.pem";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.twitch.tv";
-    chatnet = "twitch";
-    port = "6697";
-    password = "";
-    use_tls = "yes";
-    tls_verify = "no";
-    autoconnect = "no";
-    Group = "tmi";
   }
 );
 
 chatnets = {
-  freenode = {
-    nick = "mnx";
+  tldr = {
     type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
+    nick = "mnx";
+    sasl_username = "mnx@techen";
     sasl_mechanism = "EXTERNAL";
-    sasl_username = "Suggarmouth";
-    sasl_password = "~/.irssi/certs/freenode.pem";
-    autosendcmd = "/umode +Riw";
   };
   oftc = {
     nick = "mnx";
     type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
+    sasl_mechanism = "EXTERNAL";
     autosendcmd = "/umode +Gj";
-  };
-  efnet = {
-    nick = "mnx";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-    type = "IRC";
-  };
-  qnet = {
-    nick = "mnx";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-    autosendcmd = "";
-    type = "IRC";
   };
   2600 = {
     nick = "mnx";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
     type = "IRC";
+    sasl_mechanism = "EXTERNAL";
     autosendcmd = "/umode +Rpq";
   };
   hack = {
     nick = "mnx";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
     type = "IRC";
     sasl_mechanism = "EXTERNAL";
-    sasl_username = "mnx";
-    sasl_password = "~/.irssi/certs/hack.pem";
     autosendcmd = "/umode +Rqw";
   };
-  rizon = {
-    nick = "mnx";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-    type = "IRC";
-    sasl_mechanism = "EXTERNAL";
-    sasl_username = "mnx";
-    sasl_password = "~/.irssi/certs/Rizon.pem";
-    autosendcmd = "/umode +CGRp";
-  };
-  twitch = {
-    type = "IRC";
-    nick = "suggarmouth";
-    autosendcmd = "/quote CAP REQ :twitch.tv/membership";
-  };
-  dal = {
-    nick = "mnx";
-    type = "IRC";
-    autosendcmd = "";
-  };
-  ircnet = { nick = "mnx"; type = "IRC"; };
 };
-
-channels = (
-  { name = "##poland"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#vim"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#freenode"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "##startups-pl"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#linode"; chatnet = "oftc"; autojoin = "yes"; },
-  { name = "#secnews"; chatnet = "2600"; autojoin = "yes"; },
-  { name = "#2600"; chatnet = "2600"; autojoin = "yes"; },
-  { name = "#hackint"; chatnet = "hack"; autojoin = "yes"; },
-  { name = "#atw"; chatnet = "Ircnet"; autojoin = "yes"; },
-  { name = "#he4ven"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#ziemia"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#pieklo"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#pornhub"; chatnet = "ircnet"; autojoin = "yes"; },
-  { name = "#oftc"; chatnet = "oftc"; autojoin = "no"; },
-  { name = "#lrh"; chatnet = "efnet"; autojoin = "no"; },
-  { name = "#irc30"; chatnet = "efnet"; autojoin = "no"; },
-  { name = "#chat"; chatnet = "rizon"; autojoin = "no"; },
-  { name = "#chatdalnet"; chatnet = "dal"; autojoin = "no"; },
-  { name = "#worldchat"; chatnet = "ircnet"; autojoin = "no"; },
-  { name = "#quarantine"; chatnet = "qnet"; autojoin = "no"; },
-  { name = "#reactjs"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "#golangpl"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#stripe"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "#iterm2"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##electronics"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##security"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##crypto"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#irssi"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##design"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##linux"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#mutt"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#zsh"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##aws"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#hackerspace-pl"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#cicadasolvers"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#hackerspace-krk"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#javascript"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#vimwiki"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "#reddit"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#gitlab"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#monkin"; chatnet = "Freenode"; autojoin = "no"; },
-  { name = "##monkin"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#blender"; chatnet = "Freenode"; },
-  {
-    name = "#opensourcedesign";
-    chatnet = "Freenode";
-    autojoin = "no";
-  },
-  { name = "#wikipedia-pl"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##apple"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "##science"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#nginx"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#pocoo"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#python"; chatnet = "Freenode"; autojoin = "No"; },
-  { name = "#memory-alpha"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "#funkwhale"; chatnet = "freenode"; autojoin = "no"; }
-);
 
 aliases = {
   B = "BAN";
@@ -235,6 +69,29 @@ aliases = {
   P = "PART";
   Q = "QUIT";
   W = "WHO";
+  CS = "/msg chanserv";
+  CSGET = "/msg chanserv get";
+  DEFCON = "/quote defcon";
+  HELPOP = "/quote helpop";
+  HISTORY = "/quote history";
+  HS = "/msg hostserv";
+  NS = "/msg nickserv";
+  OH = "/quote help";
+  PASSWD = "/msg nickserv passwd";
+  PURGE = "/msg chanserv purge";
+  QR = "/quote rehash";
+  RENAME = "/msg nickserv rename";
+  SADROP = "/msg nickserv sadrop";
+  SAGET = "/msg nickserv saget";
+  SAJOIN = "/quote sajoin";
+  SAMODE = "/quote samode";
+  SANICK = "/quote sanick";
+  SAREGISTER = "/msg nickserv saregister";
+  SASET = "/msg nickserv saset";
+  SCHM = "/quote HELP cmode";
+  SIGNOFF = "quit";
+  SUM = "/quote HELP umode";
+  SUSPEND = "/msg nickserv suspend";
   WC = "WINDOW CLOSE";
   WL = "WINDOW LIST";
   WI = "WHOIS";
@@ -242,26 +99,6 @@ aliases = {
   RUN = "SCRIPT LOAD";
   UMODE = "MODE $N";
   CLEAN = "/scrollback levelclear -level quits,parts,join";
-  REG = "/msg nickserv regain";
-  MOP = "/msg chanserv op #monkin";
-  GOP = "/msg chanserv op #golangpl";
-  MMOP = "/msg chanserv op ##monkin";
-  CHAN = "/msg chanserv info $0";
-  ACC = "/msg nickserv info";
-  CAC = "/msg nickserv info $0";
-  FREE = "/connect freenode";
-  HACK = "/connect hack";
-  OFTC = "/connect oftc";
-  INET = "/connect ircnet";
-  QNET = "/connect qnet";
-  2600 = "/connect 2600";
-  RNET = "/connect rizon";
-  DNET = "/connect dal";
-  ENET = "/connect efnet";
-  S = "/msg alis list $0";
-  SS = "/msg alis list $0 $0 $0";
-  SUM = "/quote HELP umode";
-  SCHM = "/quote HELP cmode";
   DELACT = "/statusbar window remove act";
   SHOWACT = "/statusbar window add -after lag -priority 10 act";
 };
@@ -368,9 +205,9 @@ statusbar = {
 
 settings = {
   core = {
-    real_name = "mnx";
-    user_name = "mnx";
-    nick = "mnx";
+    real_name = "marian";
+    user_name = "marian";
+    nick = "marian";
     settings_autosave = "yes";
     recode_fallback = "UTF-8";
     recode_out_default_charset = "UTF-8";
@@ -387,10 +224,9 @@ settings = {
     max_ctcp_queue = "1";
   };
   "fe-common/core" = {
-    autolog = "no";
-    autolog_path = "~/.irssi/logs/$tag/$0.log";
     show_nickmode_empty = "no";
     show_quit_once = "yes";
+    theme = "default";
   };
   "perl/core/scripts" = {
     nicklist_color = "yes";
@@ -398,35 +234,4 @@ settings = {
   };
 };
 
-ignores = (
-  { level = "JOINS PARTS QUITS DCC"; },
-  {
-    level = "ALL";
-    exception = "yes";
-    channels = ( "##poland", "#atw", "##startups-pl", "#he4ven" );
-  },
-  { level = "NO_ACT ALL"; channels = ( "#chat" ); },
-  { level = "NO_ACT ALL"; channels = ( "#atw" ); },
-  { level = "NO_ACT ALL"; channels = ( "#oftc" ); },
-  { level = "NO_ACT ALL"; channels = ( "#linode" ); },
-  { level = "NO_ACT ALL"; channels = ( "#chatdalnet" ); },
-  { level = "NO_ACT ALL"; channels = ( "#LRH" ); },
-  { level = "NO_ACT ALL"; channels = ( "#stripe" ); },
-  { level = "NO_ACT ALL"; channels = ( "#2600" ); },
-  { level = "NO_ACT ALL"; channels = ( "#IRC30" ); },
-  { level = "NO_ACT ALL"; channels = ( "#quarantine" ); }
-);
-
-logs = {
-  "~/irc.log.Window2" = {
-    level = "ALL";
-    items = ( { type = "window"; name = "2"; } );
-  };
-};
-
 windows = { 1 = { immortal = "yes"; name = ""; level = "ALL"; }; };
-
-mainwindows = { 1 = { first_line = "1"; lines = "36"; }; };
-keyboard = (
-  { key = "meta-[M"; id = "command"; data = "mouse_xterm"; }
-);
