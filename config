@@ -5,7 +5,6 @@ servers = (
     port = "6697";
     use_tls = "yes";
     tls_cert = "~/.irssi/certs/mnx.pem";
-    tls_verify = "yes";
   },
   {
     address = "irc.oftc.net";
@@ -13,7 +12,6 @@ servers = (
     port = "6697";
     use_tls = "yes";
     tls_cert = "~/.irssi/certs/oftc.pem";
-    tls_verify = "yes";
   },
   {
     address = "corsair.scuttled.net";
@@ -28,7 +26,6 @@ servers = (
     use_tls = "yes";
     port = "6697";
     tls_cert = "~/.irssi/certs/hack.pem";
-    tls_verify = "yes";
   }
 );
 
