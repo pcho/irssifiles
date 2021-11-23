@@ -42,13 +42,11 @@ chatnets = {
   oftc = {
     nick = "mnx";
     type = "IRC";
-    sasl_mechanism = "EXTERNAL";
     autosendcmd = "/umode +Gj";
   };
   2600 = {
     nick = "mnx";
     type = "IRC";
-    sasl_mechanism = "EXTERNAL";
     autosendcmd = "/umode +Rpq";
   };
   hack = {
